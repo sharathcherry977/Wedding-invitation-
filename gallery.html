@@ -3,30 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding Story</title>
+    <title>Wedding Invitation</title>
     <style>
         body { font-family: 'Georgia', serif; background-color: #fffaf0; color: #4a4a4a; text-align: center; padding: 30px 20px; margin: 0; }
         .wrapper { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         h1 { font-size: 28px; color: #b38b6d; margin-bottom: 5px; }
-        h2 { font-size: 22px; color: #b38b6d; margin-top: 40px; margin-bottom: 20px; font-style: italic; }
         .ampersand { font-size: 22px; color: #8c8c8c; margin: 5px 0; }
         .welcome-text { font-style: italic; font-size: 16px; line-height: 1.6; color: #666; margin: 25px 0; padding: 0 10px; }
-        
-        /* Image Styling */
-        .image-container { width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 15px; position: relative; }
+        .image-container { width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 30px; }
         .couple-pic { width: 100%; display: block; }
-        .story-text { font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 35px; padding: 0 10px; text-align: justify; }
-        
-        /* Interactive Music Picture Styling */
-        .music-pic-container { cursor: pointer; border: 3px solid #b38b6d; }
-        .music-hint { font-size: 13px; font-weight: bold; color: #b38b6d; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: block; animation: pulse 2s infinite; }
-        
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
         .details-box { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 0; margin: 25px 0; }
         .date { font-size: 20px; font-weight: bold; color: #333; letter-spacing: 1px; }
         .time { font-size: 18px; color: #b38b6d; margin-top: 5px; font-weight: 600; }
@@ -34,12 +19,6 @@
     </style>
 </head>
 <body>
-
-    <!-- HIDDEN AUDIO ELEMENT -->
-    <audio id="weddingMusic" loop>
-        <source src="wedding-song.mp3" type="audio/mpeg">
-    </audio>
-
     <div class="wrapper">
         <h1>Sowmya</h1>
         <div class="ampersand">&</div>
@@ -47,69 +26,16 @@
         <p class="welcome-text">
             "With hearts full of love and joy, we warmly welcome our dear family and friends to join us as we celebrate the beginning of our beautiful journey together. Your presence and blessings mean the world to us."
         </p>
-
-        <!-- MAIN PIC -->
         <div class="image-container">
-            <img src="1000256812.jpg" alt="Sowmya & Sharathchandran" class="couple-pic">
+            <img src="couple.jpg.jpg" alt="Sowmya & Sharathchandran" class="couple-pic">
         </div>
-
         <div class="details-box">
             <div class="date">Wednesday, 24th June 2026</div>
             <div class="time">Morning at 8:45 AM</div>
         </div>
-
         <p style="font-size: 15px; color: #777;">Join us at our wedding venue:</p>
         <a href="https://share.google/4Qb6e07gjhTgTQpRi" target="_blank" class="map-btn">📍 View Venue on Google Maps</a>
-
-        <h2>Our Moments Together</h2>
-
-        <!-- SPECIAL PICTURE: CLIKING THIS ONE PLAYS THE SONG -->
-        <span class="music-hint">🎵 Tap this photo to play/pause our song 🎵</span>
-        <div class="image-container music-pic-container" onclick="toggleMusic()">
-            <img src="extra1.jpg" alt="Click for Music" class="couple-pic">
-        </div>
-        <p class="story-text">
-            "Every day spent together is a new page in our beautiful love story. From simple walks to unforgettable deep conversations, we have found our perfect forever in each other."
-        </p>
-
-        <!-- EXTRA PIC 2 (NORMAL PHOTO) -->
-        <div class="image-container">
-            <img src="extra2.jpg" alt="Our Journey" class="couple-pic">
-        </div>
-        <p class="story-text">
-            "Laughter is brighter when shared. As we step closer to our big day, we look back at all the beautiful smiles and support that brought us here."
-        </p>
-
-        <!-- EXTRA PIC 3 (NORMAL PHOTO) -->
-        <div class="image-container">
-            <img src="extra3.jpg" alt="The Promise" class="couple-pic">
-        </div>
-        <p class="story-text">
-            "A promise to hold hands, face life's adventures side by side, and never stop loving each other. We can't wait to lock in this promise forever in front of you all."
-        </p>
-
     </div>
-
-    <!-- JAVASCRIPT TO HANDLE CLICK TO PLAY/PAUSE -->
-    <script>
-        function toggleMusic() {
-            const audio = document.getElementById('weddingMusic');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.parentNode.removeChild(audio); // Stops and completely clears the stream if paused
-                // Recreate element dynamically if they click again to play fresh
-                const newAudio = document.createElement('audio');
-                newAudio.id = 'weddingMusic';
-                newAudio.loop = true;
-                const source = document.createElement('source');
-                source.src = 'wedding-song.mp3';
-                source.type = 'audio/mpeg';
-                newAudio.appendChild(source);
-                document.body.appendChild(newAudio);
-            }
-        }
-    </script>
-
 </body>
 </html>
+
