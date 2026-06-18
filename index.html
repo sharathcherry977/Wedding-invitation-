@@ -3,18 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You are Invited</title>
+    <title>Wedding Invitation</title>
     <style>
-        body { font-family: 'Georgia', serif; background-color: #fffaf0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
-        .image-container { width: 100%; max-width: 320px; border: 8px solid #fff; box-shadow: 0px 10px 25px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; }
-        .main-pic { width: 100%; display: block; }
-        .btn { margin-top: 30px; padding: 14px 40px; background-color: #b38b6d; color: white; text-decoration: none; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; border-radius: 30px; box-shadow: 0 5px 15px rgba(179, 139, 109, 0.4); transition: 0.3s ease; }
+        body { 
+            font-family: 'Georgia', serif; 
+            background-color: #fffaf0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 20px; 
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .wedding-header {
+            color: #b38b6d;
+            margin-bottom: 5px;
+            font-size: 32px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        .wedding-subtitle {
+            color: #777;
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        .image-container { 
+            width: 100%; 
+            max-width: 320px; 
+            border: 8px solid #fff; 
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.15); 
+            border-radius: 4px; 
+            overflow: hidden; 
+        }
+        .main-pic { 
+            width: 100%; 
+            display: block; 
+        }
+        .btn { 
+            margin-top: 35px; 
+            padding: 14px 40px; 
+            background-color: #b38b6d; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 16px; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            border-radius: 30px; 
+            box-shadow: 0 5px 15px rgba(179, 139, 109, 0.4); 
+            transition: 0.3s ease; 
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Crisp wedding message at the top -->
+    <h1 class="wedding-header">WEDDING INVITATION</h1>
+    <p class="wedding-subtitle">Save Our Date • June 24, 2026</p>
+
+    <!-- Your portrait file "1000256818.jpg" -->
     <div class="image-container">
         <img src="front.jpg.jpg" alt="Sowmya and Sharathchandran" class="main-pic">
     </div>
-    <a href="gallery.html" class="btn">Click Here</a>
+    
+    <!-- Entry button to view full card details -->
+    <a href="gallery.html" class="btn">Open Invitation</a>
+
 </body>
 </html>
