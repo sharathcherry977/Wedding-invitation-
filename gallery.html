@@ -22,18 +22,16 @@
         body { font-family: 'Georgia', serif; background-color: #fffaf0; color: #4a4a4a; text-align: center; padding: 30px 20px; margin: 0; }
         .wrapper { max-width: 500px; margin: 0 auto; background: #ffffff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
         h1 { font-size: 28px; color: #b38b6d; margin-bottom: 5px; }
-        h2 { font-size: 22px; color: #b38b6d; margin-top: 40px; margin-bottom: 20px; font-style: italic; }
         .ampersand { font-size: 22px; color: #8c8c8c; margin: 5px 0; }
-        .welcome-text { font-style: italic; font-size: 16px; line-height: 1.6; color: #666; margin: 25px 0; padding: 0 10px; }
+        .welcome-text { font-style: italic; font-size: 16px; line-height: 1.6; color: #666; margin: 25px 0 15px 0; padding: 0 10px; }
         
         /* Image Styling */
         .image-container { width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 15px; position: relative; }
         .couple-pic { width: 100%; display: block; }
-        .story-text { font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 35px; padding: 0 10px; text-align: justify; }
         
         /* Interactive Music Picture Styling */
         .music-pic-container { cursor: pointer; border: 3px solid #b38b6d; }
-        .music-hint { font-size: 13px; font-weight: bold; color: #b38b6d; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: block; animation: pulse 2s infinite; }
+        .music-hint { font-size: 13px; font-weight: bold; color: #b38b6d; letter-spacing: 1px; text-transform: uppercase; margin-top: 15px; margin-bottom: 8px; display: block; animation: pulse 2s infinite; }
         
         @keyframes pulse {
             0% { opacity: 0.6; }
@@ -166,8 +164,9 @@
         <!-- TRIGGER BUTTON FOR THE TRADITIONAL CARD -->
         <button class="traditional-card-btn" onclick="openTraditionalCard()">✨ View Traditional Card ✨</button>
 
-        <!-- FIXED MAIN PIC FILENAME FOR YOUR REPOSITORY -->
-        <div class="image-container">
+        <!-- MUSIC FEATURE PLACED DIRECTLY ON MAIN COUPLE PIC -->
+        <span class="music-hint">🎵 Tap our photo to play/pause music 🎵</span>
+        <div class="image-container music-pic-container" onclick="toggleMusic()">
             <img src="couple.jpg.jpg" alt="Sowmya & Sharathchandran" class="couple-pic">
         </div>
 
@@ -178,33 +177,6 @@
 
         <p style="font-size: 15px; color: #777;">Join us at our wedding venue:</p>
         <a href="https://share.google/4Qb6e07gjhTgTQpRi" target="_blank" class="map-btn">📍 View Venue on Google Maps</a>
-
-        <h2>Our Moments Together</h2>
-
-        <!-- SPECIAL MUSICAL PHOTO -->
-        <span class="music-hint">🎵 Tap this photo to play/pause our song 🎵</span>
-        <div class="image-container music-pic-container" onclick="toggleMusic()">
-            <img src="extra1.jpg" alt="Click for Music" class="couple-pic">
-        </div>
-        <p class="story-text">
-            "Every day spent together is a new page in our beautiful love story. From simple walks to unforgettable deep conversations, we have found our perfect forever in each other."
-        </p>
-
-        <!-- EXTRA PIC 2 -->
-        <div class="image-container">
-            <img src="extra2.jpg" alt="Our Journey" class="couple-pic">
-        </div>
-        <p class="story-text">
-            "Laughter is brighter when shared. As we step closer to our big day, we look back at all the beautiful smiles and support that brought us here."
-        </p>
-
-        <!-- EXTRA PIC 3 -->
-        <div class="image-container">
-            <img src="extra3.jpg" alt="The Promise" class="couple-pic">
-        </div>
-        <p class="story-text">
-            "A promise to hold hands, face life's adventures side by side, and never stop loving each other. We can't wait to lock in this promise forever in front of you all."
-        </p>
     </div>
 
 
@@ -216,7 +188,7 @@
         <button class="close-modal-btn" onclick="closeTraditionalCard()">✕</button>
 
         <!-- DOOR INTRO -->
-        <div id="door-screen" aria-hidden="false">
+        <div id="door-screen">
             <div class="door-panel door-left">
                 <div class="door-carving"></div>
                 <div class="pillar-dots"><span></span><span></span><span></span><span></span><span></span></div>
@@ -226,7 +198,7 @@
                 <div class="pillar-dots"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
             <div class="door-center-seam"></div>
-            <div id="tap-prompt" role="button" tabindex="0" aria-label="ఆహ్వానం తెరవడానికి తాకండి">
+            <div id="tap-prompt" role="button" tabindex="0" onclick="openDoors(event)" aria-label="ఆహ్వానం తెరవడానికి తాకండి">
                 <span class="om">ॐ</span>
                 <span class="names-mini">శరత్ చంద్రన్ &amp; సౌమ్య</span>
                 <span class="instruction">తలుపులు తెరవడానికి తాకండి</span>
@@ -239,7 +211,7 @@
         <main id="invite">
             <!-- HERO -->
             <section id="hero">
-                <div class="corner-motif">ௐ</div>
+                <div class="corner-motif">09</div>
                 <div class="ganesha">శ్రీ గణేశాయ నమః</div>
                 <p class="invite-tagline">రెండు కుటుంబాలు, ఒక పవిత్ర బంధం</p>
 
@@ -261,18 +233,18 @@
                 <p class="with-blessings">మీ ఆశీర్వాదాలు, సమక్షం మాకు ముఖ్యం</p>
             </section>
 
-            <!-- FAMILIES -->
+            <!-- FAMILIES WITH CUSTOM UPDATED TERMS -->
             <section id="families">
                 <div class="family-block">
                     <div class="family-role">వరుడు</div>
                     <div class="family-name">శరత్ చంద్రన్</div>
-                    <div class="family-parents">సత్యనారాయణ &amp; పద్మ గారల ముద్దుల కుమారుడు</div>
+                    <div class="family-parents">సత్యనారాయణ &amp; పద్మ గారల ద్వితీయ పుత్రుడు</div>
                 </div>
                 <div class="divider"></div>
                 <div class="family-block">
                     <div class="family-role">వధువు</div>
                     <div class="family-name">సౌమ్య</div>
-                    <div class="family-parents">కోటేశ్వర రావు &amp; శ్రీదేవి గారల ముద్దుల కుమార్తె</div>
+                    <div class="family-parents">కోటేశ్వర రావు &amp; శ్రీదేవి గారల కనిష్ఠ పుత్రిక</div>
                 </div>
             </section>
 
@@ -295,4 +267,30 @@
 
             <!-- COUNTDOWN -->
             <section id="countdown-wrap">
-                <div class="countdown-label">Counting down
+                <div class="countdown-label">Counting down to the celebration</div>
+                <div id="countdown">
+                    <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-unit-label">Days</span></div>
+                    <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-unit-label">Hrs</span></div>
+                    <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-unit-label">Min</span></div>
+                    <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-unit-label">Sec</span></div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <section id="footer">
+                <div class="divider"></div>
+                <p class="footer-line">"Where minds meet without fear, and hearts unite as one — may every step ahead be taken together."</p>
+                <p class="footer-names">Sharath Chandran &amp; Sowmya</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function openTraditionalCard() {
+            const modal = document.getElementById('traditionalCardModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modal.classList.remove('opened');
+            
+            const doorScreen = docu
