@@ -110,12 +110,31 @@ audio{display:none}
 .invite-tagline{font-size:15px;color:var(--teal);margin-top:10px}
 
 /* Heartbeat names */
-.couple-names{margin-top:32px}
-.cname{font-family:'Ramabhadra','Marcellus',serif;font-size:clamp(30px,8vw,42px);color:var(--maroon);line-height:1.4;display:block;overflow:hidden;white-space:nowrap;width:0}
-#cardModal.doors-open .cname{animation:typing 3s steps(30,end) forwards;animation-delay:.6s}
-#cardModal.doors-open .cname.delay{animation-delay:3.8s}
-@keyframes typing{from{width:0}to{width:100%}}
-.camp{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold);display:block;margin:6px 0}
+
+.cname {
+  font-family: 'Ramabhadra','Marcellus', serif;
+  font-size: clamp(30px, 8vw, 42px);
+  color: var(--maroon);
+  line-height: 1.4;
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: none;
+}
+
+#cardModal.doors-open .cname {
+  animation: nameFadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+#cardModal.doors-open .cname.delay {
+  animation-delay: 2.2s;
+}
+
+@keyframes nameFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 /* Mandala / Kolam — drawn via canvas */
 #kolamWrap{margin:24px auto 10px;width:200px;height:200px;position:relative}
@@ -343,13 +362,7 @@ audio{display:none}
 /* ═══════════════════════════════════════════════════════════════
    MAIN PAGE MUSIC
 ═══════════════════════════════════════════════════════════════ */
-const mainMusic=document.getElementById('weddingMusic');
-const musicBadge=document.getElementById('musicBadge');
-let musicOn=false;
-function toggleMusic(){
-  if(!musicOn){mainMusic.play().then(()=>{musicOn=true;musicBadge.textContent='🎵 Playing — tap to pause'}).catch(()=>{})}
-  else{mainMusic.pause();musicOn=false;musicBadge.textContent='🎵 Tap to play music'}
-}
+
 
 /* ═══════════════════════════════════════════════════════════════
    CINEMATIC INTRO — starfield canvas
